@@ -1,0 +1,20 @@
+# Site settings — GitHub Pages builds this with Jekyll automatically.
+title: Alon Babchuk
+description: Alon Babchuk — independent researcher, AI safety and psychology.
+url: "https://alonbabchuk.com"
+baseurl: ""
+lang: en-GB
+locale: en_GB
+
+markdown: kramdown
+permalink: pretty
+
+plugins:
+  - jekyll-sitemap
+
+# Files that should not be published as part of the site
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock

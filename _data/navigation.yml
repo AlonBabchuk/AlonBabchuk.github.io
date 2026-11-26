@@ -1,0 +1,7 @@
+# Top navigation. Add a line here to show a new page in the menu.
+- title: Home
+  url: /
+- title: Research
+  url: /research/
+- title: Contact
+  url: /contact/
