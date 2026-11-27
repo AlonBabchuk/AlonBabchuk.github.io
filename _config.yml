@@ -5,6 +5,8 @@ url: "https://alonbabchuk.com"
 baseurl: ""
 lang: en-GB
 locale: en_GB
+email: contact@alonbabchuk.com
+github_url: https://github.com/AlonBabchuk
 
 markdown: kramdown
 permalink: pretty

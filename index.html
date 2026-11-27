@@ -1,0 +1,50 @@
+---
+layout: default
+title: Home
+layout_wide: true
+---
+{%- comment -%}
+  The photo column only appears once assets/img/photo.jpg exists in the repo.
+{%- endcomment -%}
+{%- assign photo = site.static_files | where: "path", "/assets/img/photo.jpg" | first -%}
+
+<section class="hero{% if photo %} hero--with-photo{% endif %}">
+  <div class="wrap hero__inner">
+    <div class="hero__text">
+      <span class="eyebrow">Independent researcher</span>
+      <h1>AI safety, read through the lens of professional care.</h1>
+      <p class="hero__lede">I study whether frontier AI systems meet the duty-of-care standards we expect of human advisers — and where they quietly drift towards pleasing instead.</p>
+      <div class="hero__actions">
+        <a class="button button--solid" href="{{ '/research/' | relative_url }}">Read the research</a>
+        <a class="button button--outline" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+      </div>
+    </div>
+    {%- if photo %}
+    <div class="hero__photo">
+      <img src="{{ photo.path | relative_url }}" alt="Portrait of Alon Babchuk" width="480" height="600">
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="current-work">
+  <div class="wrap">
+    <h2 class="section__title" id="current-work">Current work</h2>
+    <ul class="cards">
+      {%- for card in site.data.current_work %}
+      <li class="card">
+        <span class="eyebrow">{{ card.label }}</span>
+        <h3 class="card__title">{{ card.title }}</h3>
+        <p class="card__text">{{ card.text }}</p>
+        <p class="card__link">
+          {%- if card.url -%}
+          <a href="{{ card.url }}">{{ card.link_text }}</a>
+          {%- else -%}
+          <span class="card__soon">{{ card.link_text }}</span>
+          {%- endif -%}
+        </p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

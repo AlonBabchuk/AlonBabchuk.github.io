@@ -8,13 +8,17 @@ anything or run a build step locally.
 
 | Path | What it is |
 |---|---|
-| `_config.yml` | Site-wide settings: title, description, URL, language (en-GB). |
+| `_config.yml` | Site-wide settings: title, description, URL, language (en-GB), contact email, GitHub link. |
 | `_data/navigation.yml` | The menu at the top of every page. |
-| `_layouts/default.html` | The one shared page template: `<head>`, meta and Open Graph tags, header, footer. |
-| `assets/css/style.css` | All styling. It uses system fonts only, so the site makes no external requests. |
-| `index.md` | Home page (`/`). |
-| `research.md` | Research page (`/research/`). |
-| `contact.md` | Contact page (`/contact/`). |
+| `_data/current_work.yml` | The three "Current work" cards on the home page. Edit the text and links here. |
+| `_layouts/default.html` | The one shared page template: `<head>`, meta and Open Graph tags, notice bar, header, footer. |
+| `_includes/notice.html` | The "under construction" bar at the top of every page. To remove it, delete the `{% include notice.html %}` line in `_layouts/default.html`. |
+| `_includes/header.html`, `_includes/footer.html` | Site header (name and menu) and footer. |
+| `assets/css/style.css` | All styling. Colours are defined as variables at the top. |
+| `assets/fonts/` | Self-hosted Inter (body) and Source Serif 4 (headings), under the SIL Open Font License. No Google Fonts link is used. |
+| `assets/img/photo.jpg` | *(Optional, not added yet.)* Add a portrait here and it appears automatically beside the home-page heading. A 4:5 crop works best. |
+| `index.html` | Home page (`/`). |
+| `research.md`, `writing.md`, `about.md`, `contact.md` | Inner pages (`/research/`, `/writing/`, `/about/`, `/contact/`). |
 | `404.html` | "Page not found" page. |
 | `favicon.svg` | Browser-tab icon (placeholder "AB"). Replace it with your own SVG of the same name. |
 | `robots.txt` | Lets search engines crawl the site and points them to the sitemap. |

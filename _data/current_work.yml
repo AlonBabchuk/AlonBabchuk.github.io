@@ -1,0 +1,18 @@
+# Cards in the "Current work" section of the home page.
+# Leave out `url` to show the link text without a link (e.g. "Coming soon").
+- label: Framework
+  title: PRISM
+  text: Empirical tests of whether frontier AI meets professional duty-of-care standards.
+  link_text: Data and code →
+  url: https://github.com/AlonBabchuk/prism-safety
+
+- label: Paper
+  title: Gradual drift towards sycophancy
+  text: A psychological perspective on how AI advisers slide from honest help to pleasing.
+  link_text: Coming soon
+
+- label: Publication
+  title: Zenodo record
+  text: The published PRISM paper with its permanent DOI.
+  link_text: View on Zenodo →
+  url: https://doi.org/10.5281/zenodo.19247527

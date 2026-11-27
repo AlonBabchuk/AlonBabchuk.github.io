@@ -1,7 +1,10 @@
 # Top navigation. Add a line here to show a new page in the menu.
-- title: Home
-  url: /
+# (The site name on the left already links to the home page.)
 - title: Research
   url: /research/
+- title: Writing
+  url: /writing/
+- title: About
+  url: /about/
 - title: Contact
   url: /contact/

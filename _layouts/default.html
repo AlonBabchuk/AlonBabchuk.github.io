@@ -12,8 +12,11 @@
   <title>{{ full_title }}</title>
   <meta name="description" content="{{ desc | escape }}">
   <meta name="author" content="Alon Babchuk">
+  <meta name="theme-color" content="#F7F6F2">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preload" href="{{ '/assets/fonts/inter-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/source-serif-4-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
   <!-- Open Graph -->
@@ -26,21 +29,21 @@
   <meta name="twitter:card" content="summary">
 </head>
 <body>
-  <header class="site-header">
-    <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    <nav aria-label="Main">
-      {%- for item in site.data.navigation %}
-      <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
-      {%- endfor %}
-    </nav>
-  </header>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {%- comment -%} Remove the next line (or the file _includes/notice.html) to hide the notice bar. {%- endcomment %}
+  {% include notice.html %}
+  {% include header.html %}
 
-  <main>
+  <main id="main">
+    {%- if page.layout_wide -%}
     {{ content }}
+    {%- else -%}
+    <div class="wrap prose">
+      {{ content }}
+    </div>
+    {%- endif -%}
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; {{ 'now' | date: "%Y" }} Alon Babchuk. This site uses no cookies, tracking or analytics.</p>
-  </footer>
+  {% include footer.html %}
 </body>
 </html>
